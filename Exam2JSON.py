@@ -40,15 +40,24 @@ for i in xrange(len(fileContent)):
 		print '\t\t\t\"AnswerNum\":\"one\",'
 	else:
 		print '\t\t\t\"AnswerNum\":\"more\",'
-	print '\t\t\t\"A\":\"%s\",' %(fileContent[i+1][3:len(fileContent[i+1])-1])
-	print '\t\t\t\"B\":\"%s\",' %(fileContent[i+2][3:len(fileContent[i+2])-1])
-	print '\t\t\t\"C\":\"%s\",' %(fileContent[i+3][3:len(fileContent[i+3])-1])
+	print '\t\t\t\"option\":['
+	print '\t\t\t\t"%s\",' %(fileContent[i+1][3:len(fileContent[i+1])-1])
+	print '\t\t\t\t"%s\",' %(fileContent[i+2][3:len(fileContent[i+2])-1])
+	print '\t\t\t\t"%s\",' %(fileContent[i+3][3:len(fileContent[i+3])-1])
 	if optionNum == 4:
-		print '\t\t\t\"D\":\"%s\"' %(fileContent[i+4][3:len(fileContent[i+4])-1])
+		print '\t\t\t\t"%s\"' %(fileContent[i+4][3:len(fileContent[i+4])-1])
 	else:
-		print '\t\t\t\"D\":\"%s\",' %(fileContent[i+4][3:len(fileContent[i+4])-1])
-		print '\t\t\t\"E\":\"%s\"' %(fileContent[i+5][3:len(fileContent[i+5])-1])
-
+		print '\t\t\t\t"%s\",' %(fileContent[i+4][3:len(fileContent[i+4])-1])
+		print '\t\t\t\t"%s\"' %(fileContent[i+5][3:len(fileContent[i+5])-1])
+	print '\t\t\t]'
+	# print '\t\t\t\"A\":\"%s\",' %(fileContent[i+1][3:len(fileContent[i+1])-1])
+	# print '\t\t\t\"B\":\"%s\",' %(fileContent[i+2][3:len(fileContent[i+2])-1])
+	# print '\t\t\t\"C\":\"%s\",' %(fileContent[i+3][3:len(fileContent[i+3])-1])
+	# if optionNum == 4:
+	# 	print '\t\t\t\"D\":\"%s\"' %(fileContent[i+4][3:len(fileContent[i+4])-1])
+	# else:
+	# 	print '\t\t\t\"D\":\"%s\",' %(fileContent[i+4][3:len(fileContent[i+4])-1])
+	# 	print '\t\t\t\"E\":\"%s\"' %(fileContent[i+5][3:len(fileContent[i+5])-1])
 	continueCount = optionNum + 1
 	if (i + continueCount) < len(fileContent):
 		print '\t\t},'
